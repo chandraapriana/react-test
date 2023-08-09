@@ -11,6 +11,7 @@ const HomePage = () => {
       />
       <Header />
       <Home />
+      <img className="ornament-home" src="/images/ornament_home.png" alt="" />
     </div>
   );
 };
