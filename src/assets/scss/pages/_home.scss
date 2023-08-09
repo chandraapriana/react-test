@@ -8,7 +8,7 @@
 
 .ornament-home {
   position: absolute;
-  bottom: -130px;
+  bottom: -50px;
   right: -40%;
   width: 85%;
   height: 35vw;
@@ -23,4 +23,5 @@
 .home {
   position: relative;
   width: 100%;
+  min-height: 92vh;
 }
