@@ -1,7 +1,12 @@
 import "./assets/scss/index.scss";
+import HomePage from "./pages/home";
 
 function App() {
-  return <>test</>;
+  return (
+    <>
+      <HomePage />
+    </>
+  );
 }
 
 export default App;
