@@ -1,5 +1,5 @@
-const ButtonSolid = () => {
-  return <div>ButtonSolid</div>;
+const ButtonSolid = ({ children }: { children: React.ReactNode }) => {
+  return <button className="btn-solid">{children}</button>;
 };
 
 export default ButtonSolid;
