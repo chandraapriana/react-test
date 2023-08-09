@@ -1,0 +1,27 @@
+.header {
+  position: relative;
+  @include flexr();
+  justify-content: space-between;
+
+  .left {
+    @include flexr();
+    .logo {
+      width: 30px;
+    }
+    h1 {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-left: 0.875rem;
+      color: white;
+    }
+  }
+
+  .right {
+    @include flexr();
+    gap: 2.25rem;
+    .btn-nav {
+      font-size: 1.25rem;
+      font-weight: bold;
+    }
+  }
+}
