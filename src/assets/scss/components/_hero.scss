@@ -1,0 +1,31 @@
+.hero {
+  margin-top: 13%;
+  @include flexrc();
+  gap: 40px;
+  .img-hero {
+    width: 438px;
+    height: 340px;
+  }
+  .text-hero {
+    @include flexc();
+    margin-top: -60px;
+    h1 {
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
+    }
+    p {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+    .row {
+      gap: 1rem;
+      .btn-outline,
+      .btn-solid {
+        h1 {
+          font-size: 1rem;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
