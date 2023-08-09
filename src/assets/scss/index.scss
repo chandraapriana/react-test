@@ -1,8 +1,13 @@
+@import "./variable";
+@import "./mixins";
+@import "./pages/home";
+@import "./components/header";
+@import "./components/button-outline";
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 1.5rem 2rem;
 }
 
 :root {
@@ -14,22 +19,54 @@
   color: black;
   background-color: white !important;
 
-  font-synthesis: none;
+  // font-synthesis: none;
   text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
+  // -webkit-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
 
 h1 {
+  margin: 0;
+  padding: 0;
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+button,
+.btn {
+  outline: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  &.disabled {
+    filter: grayscale(0.75);
+    // opacity: 1;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &:hover {
+    filter: brightness(1.1);
+    // transform: translate3d(0, 0.1vh, 0);
+  }
 }
