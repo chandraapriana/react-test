@@ -6,9 +6,18 @@
   height: 311px;
 }
 
+.ornament-home {
+  position: absolute;
+  bottom: -130px;
+  right: -40%;
+  width: 85%;
+  height: 35vw;
+}
+
 .home-page {
   position: relative;
   width: 100%;
+  min-height: 100vh;
 }
 
 .home {
