@@ -3,7 +3,7 @@ import Home from "../../features/home";
 
 const HomePage = () => {
   return (
-    <div className="home">
+    <div className="home-page">
       <img
         className="ornament-header"
         src="/images/ornament_header.svg"
