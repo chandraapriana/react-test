@@ -1,5 +1,5 @@
-const ButtonOutline = () => {
-  return <div>ButtonOutline</div>;
+const ButtonOutline = ({ children }: { children: React.ReactNode }) => {
+  return <button className="btn-outline">{children}</button>;
 };
 
 export default ButtonOutline;
