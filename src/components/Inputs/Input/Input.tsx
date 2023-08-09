@@ -1,5 +1,5 @@
-const Input = () => {
-  return <div>Input</div>;
+const Input = ({ placeholder }: { placeholder: string }) => {
+  return <input placeholder={placeholder} type="text" />;
 };
 
 export default Input;

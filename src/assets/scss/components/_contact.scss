@@ -1,0 +1,34 @@
+.contact {
+  margin-top: 4.5rem;
+  gap: 2.5rem;
+  @include flexcc();
+  h1 {
+    font-size: 2rem;
+  }
+  .container-contact {
+    display: flex;
+    width: 100%;
+    max-width: 1120px;
+    gap: 3rem;
+
+    .contact-text {
+      max-width: 60%;
+      @include flexc();
+      justify-content: center;
+      h1 {
+        font-size: 2.5rem;
+      }
+      p {
+        margin-top: 2rem;
+        span {
+          margin: 0 2rem;
+        }
+      }
+    }
+    .contact-form {
+      width: 40%;
+      @include flexc();
+      gap: 1rem;
+    }
+  }
+}
