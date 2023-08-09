@@ -1,5 +1,12 @@
 const InputTextArea = () => {
-  return <div>InputTextArea</div>;
+  return (
+    <textarea
+      name="desc"
+      id="desc"
+      cols={30}
+      rows={10}
+      placeholder="description"></textarea>
+  );
 };
 
 export default InputTextArea;
