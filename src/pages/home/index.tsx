@@ -1,6 +1,5 @@
 import Header from "../../components/Header";
 import Home from "../../features/home";
-import About from "../../features/home/components/About";
 
 const HomePage = () => {
   return (
@@ -12,8 +11,6 @@ const HomePage = () => {
       />
       <Header />
       <Home />
-
-      <About />
     </div>
   );
 };
