@@ -23,6 +23,7 @@ const Hero = () => {
           </ButtonSolid>
         </div>
       </div>
+      <img className="ornament-home" src="/images/ornament_home.png" alt="" />
     </div>
   );
 };
