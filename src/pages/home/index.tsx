@@ -1,5 +1,6 @@
 import Header from "../../components/Header";
 import Home from "../../features/home";
+import About from "../../features/home/components/About";
 
 const HomePage = () => {
   return (
@@ -11,7 +12,8 @@ const HomePage = () => {
       />
       <Header />
       <Home />
-      <img className="ornament-home" src="/images/ornament_home.png" alt="" />
+
+      <About />
     </div>
   );
 };
