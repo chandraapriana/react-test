@@ -20,3 +20,33 @@
   display: flex;
   flex-direction: column;
 }
+
+@mixin tablet-view() {
+  @media (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin phone-view() {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin widescreen-view() {
+  @media screen and (max-device-aspect-ratio: 9/17) {
+    @content;
+  }
+}
+
+@mixin smallscreen-view() {
+  @media screen and (max-device-aspect-ratio: 16/9) {
+    @content;
+  }
+}
+
+@mixin dark-mode() {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
