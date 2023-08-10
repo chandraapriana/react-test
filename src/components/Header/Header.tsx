@@ -2,11 +2,12 @@ import ButtonOutline from "../Buttons/ButtonOutline";
 import ButtonSolid from "../Buttons/ButtonSolid";
 
 import { useState } from "react";
-import { LoginModal } from "../Modals";
+import { LoginModal, RegisterModal } from "../Modals";
 
 const Header = () => {
   const [isShowDropdown, setIsShowDropdown] = useState(false);
   const [isShowLoginModal, setIsShowLoginModal] = useState(false);
+  const [isShowRegisterModal, setIsShowRegisterModal] = useState(false);
 
   return (
     <>
@@ -46,7 +47,19 @@ const Header = () => {
       </div>
       <LoginModal
         openModal={isShowLoginModal}
-        onCloseModal={() => setIsShowLoginModal((prev) => !prev)}
+        onCloseModal={() => setIsShowLoginModal(false)}
+        onClick={() => {
+          setIsShowLoginModal(false);
+          setIsShowRegisterModal(true);
+        }}
+      />
+      <RegisterModal
+        openModal={isShowRegisterModal}
+        onCloseModal={() => setIsShowRegisterModal(false)}
+        onClick={() => {
+          setIsShowRegisterModal(false);
+          setIsShowLoginModal(true);
+        }}
       />
     </>
   );

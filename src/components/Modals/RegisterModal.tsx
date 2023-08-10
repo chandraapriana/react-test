@@ -1,7 +1,7 @@
 import { Modal } from "react-responsive-modal";
 import Input from "../Inputs/Input";
 import ButtonSolid from "../Buttons/ButtonSolid";
-const LoginModal = ({
+const RegisterModal = ({
   openModal,
   onCloseModal,
   onClick,
@@ -15,26 +15,28 @@ const LoginModal = ({
       open={openModal}
       onClose={onCloseModal}
       center
-      classNames={{ modal: "custom-modal login" }}>
+      classNames={{ modal: "custom-modal register" }}>
       <div className="header-modal">
         <img className="logo" src="/images/ic_logo_black.svg" alt="" />
-        <h1>Welcome Back</h1>
-        <p>please enter your details to sign in.</p>
+        <h1>Create New Account</h1>
+        <p>please register by filling with your personal detail.</p>
       </div>
       <div className="container-modal">
+        <Input placeholder="Name" />
         <Input placeholder="Email" />
         <Input placeholder="Password" />
+        <Input placeholder="Repeat Password" />
         <ButtonSolid>
-          <h1>Sign in</h1>
+          <h1>Sign up</h1>
         </ButtonSolid>
       </div>
       <div className="footer-modal">
         <p>
-          Dont have an accout? <span onClick={onClick}>Create account</span>{" "}
+          Already Have an Account? <span onClick={onClick}>Sign in</span>{" "}
         </p>
       </div>
     </Modal>
   );
 };
 
-export default LoginModal;
+export default RegisterModal;
