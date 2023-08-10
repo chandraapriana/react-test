@@ -28,7 +28,12 @@ const Contact = () => {
         </div>
         <div className="contact-form">
           <Input value={name} onChange={setName} placeholder="Name" />
-          <Input value={email} onChange={setEmail} placeholder="Email" />
+          <Input
+            value={email}
+            onChange={setEmail}
+            placeholder="Email"
+            type="email"
+          />
           <InputTextArea
             value={message}
             onChange={setMessage}

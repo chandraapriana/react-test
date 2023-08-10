@@ -45,12 +45,23 @@ const RegisterModal = ({
       </div>
       <div className="container-modal">
         <Input placeholder="Name" onChange={setName} value={name} />
-        <Input placeholder="Email" onChange={setEmail} value={email} />
-        <Input placeholder="Password" onChange={setPassword} value={password} />
+        <Input
+          placeholder="Email"
+          onChange={setEmail}
+          value={email}
+          type="email"
+        />
+        <Input
+          placeholder="Password"
+          onChange={setPassword}
+          value={password}
+          type="password"
+        />
         <Input
           placeholder="Repeat Password"
           onChange={setRepeatPassword}
           value={repeatPassword}
+          type="password"
         />
         <ButtonSolid onClick={onRegister}>
           <h1>Sign up</h1>
