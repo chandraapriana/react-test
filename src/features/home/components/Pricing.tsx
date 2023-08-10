@@ -51,7 +51,7 @@ const Pricing = () => {
       <h1>Pricing</h1>
       <div className="container-price-card">
         {pricePlans.map((plan) => (
-          <PriceCard {...plan} />
+          <PriceCard key={plan.tier} {...plan} />
         ))}
       </div>
     </div>
@@ -69,7 +69,6 @@ const PriceCard = ({
   desc: string;
   benefits: string[];
 }) => {
-  console.log(benefits);
   return (
     <div className="price-card">
       <div className="content">
@@ -80,7 +79,7 @@ const PriceCard = ({
         <p className="desc">{desc}</p>
         <div className="container-price-benefit">
           {benefits.map((benefit) => (
-            <PriceBenefitItem benefit={benefit} />
+            <PriceBenefitItem key={tier} benefit={benefit} />
           ))}
         </div>
       </div>
