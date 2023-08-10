@@ -10,6 +10,9 @@
     flex-wrap: wrap;
     align-items: stretch;
     gap: 5rem;
+    @include tablet-view {
+      gap: 1.5rem;
+    }
 
     .price-card {
       @include flexc();

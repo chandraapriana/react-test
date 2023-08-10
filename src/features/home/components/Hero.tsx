@@ -8,12 +8,11 @@ const Hero = () => {
         <img className="img-hero" src="/images/img_hero.png" alt="" />
         <div className="text-hero">
           <h1>
-            Streamline Your Work, Simplify Your Life <br />
-            with Our Management App
+            Streamline Your Work, Simplify Your Life with Our Management App
           </h1>
           <p>
             Effortless Collaboration, Efficient Result - Our Management Goods
-            <br /> Brings Your Team Toghether.
+            Brings Your Team Toghether.
           </p>
           <div className="row">
             <ButtonOutline>
