@@ -74,7 +74,8 @@ const PriceCard = ({
       <div className="content">
         <p className="tier">{tier}</p>
         <h1 className="price">
-          {price === "Free" ? price : `$${price}/month`}
+          {price === "Free" ? price : `$${price}`}
+          {price !== "Free" ? <span>/month</span> : null}
         </h1>
         <p className="desc">{desc}</p>
         <div className="container-price-benefit">
