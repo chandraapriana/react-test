@@ -10,6 +10,11 @@
     width: 100%;
     max-width: 1120px;
     gap: 3rem;
+    @include tablet-view {
+      gap: 1.5rem;
+      flex-direction: column;
+      align-items: center;
+    }
 
     .contact-text {
       max-width: 60%;
@@ -23,12 +28,32 @@
         span {
           margin: 0 2rem;
         }
+        @include phone-view {
+          span {
+            display: none;
+          }
+        }
+      }
+      @include tablet-view {
+        max-width: 100%;
+        text-align: center;
+      }
+      @include phone-view {
+        h1 {
+          font-size: 1.5rem;
+        }
+        p {
+          margin-top: 1rem;
+        }
       }
     }
     .contact-form {
       width: 40%;
       @include flexc();
       gap: 1rem;
+      @include phone-view {
+        width: 90%;
+      }
     }
   }
 }
