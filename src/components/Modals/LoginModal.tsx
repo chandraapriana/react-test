@@ -41,8 +41,18 @@ const LoginModal = ({
         <p>please enter your details to sign in.</p>
       </div>
       <div className="container-modal">
-        <Input placeholder="Email" onChange={setEmail} value={email} />
-        <Input placeholder="Password" onChange={setPassword} value={password} />
+        <Input
+          placeholder="Email"
+          onChange={setEmail}
+          value={email}
+          type="email"
+        />
+        <Input
+          placeholder="Password"
+          onChange={setPassword}
+          value={password}
+          type="password"
+        />
         <ButtonSolid onClick={() => onLogin()}>
           <h1>Sign in</h1>
         </ButtonSolid>
