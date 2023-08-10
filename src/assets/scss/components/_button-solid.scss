@@ -5,4 +5,9 @@
   border-radius: 0.5rem;
   color: white;
   font-size: 1rem;
+
+  &.icon {
+    min-width: fit-content;
+    padding: 0.25rem 0.5rem;
+  }
 }

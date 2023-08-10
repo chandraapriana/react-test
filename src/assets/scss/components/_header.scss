@@ -1,5 +1,6 @@
 .header {
   position: relative;
+  z-index: 10;
   @include flexr();
   justify-content: space-between;
 
@@ -22,6 +23,53 @@
     .btn-nav {
       font-size: 1.25rem;
       font-weight: bold;
+    }
+    @include phone-view {
+      display: none;
+    }
+  }
+
+  .mobile {
+    display: none;
+    @include phone-view {
+      display: block;
+      position: relative;
+    }
+    .btn-dropdown {
+      width: 1.5rem;
+      color: white;
+      fill: white;
+    }
+    .dropdown-content {
+      display: none;
+      background-color: $blue;
+      border-radius: 0.5rem;
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      margin: 0;
+      padding: 1rem 0rem;
+      min-width: 8rem;
+      overflow: hidden;
+      &.show {
+        display: block;
+        position: absolute;
+        margin-top: 0.5rem;
+        right: 0;
+      }
+
+      li {
+        margin: 0;
+        padding: 0.1rem 1rem;
+        list-style: none;
+        margin-bottom: 0.5rem;
+        width: 100%;
+        max-width: 100%;
+        cursor: pointer;
+        font-weight: 500;
+      }
+      li:hover {
+        filter: brightness(0);
+        box-shadow: inset 0em 0em 0em 10em rgba(0, 0, 0, 0.3);
+      }
     }
   }
 }
