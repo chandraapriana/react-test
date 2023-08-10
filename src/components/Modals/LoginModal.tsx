@@ -2,6 +2,8 @@ import { Modal } from "react-responsive-modal";
 import Input from "../Inputs/Input";
 import ButtonSolid from "../Buttons/ButtonSolid";
 import { toast } from "react-hot-toast";
+import useHandleLogin from "../../hooks/useHandleLogin";
+import { useState } from "react";
 const LoginModal = ({
   openModal,
   onCloseModal,
@@ -11,6 +13,22 @@ const LoginModal = ({
   onCloseModal: () => void;
   onClick?: () => void;
 }) => {
+  const [login] = useHandleLogin();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const onLogin = () => {
+    const isSuccessLogin = login(email, password);
+    if (isSuccessLogin.status) {
+      toast.success(isSuccessLogin.message);
+      setEmail("");
+      setPassword("");
+      onCloseModal();
+    } else {
+      toast.error(isSuccessLogin.message);
+    }
+  };
+
   return (
     <Modal
       open={openModal}
@@ -23,9 +41,9 @@ const LoginModal = ({
         <p>please enter your details to sign in.</p>
       </div>
       <div className="container-modal">
-        <Input placeholder="Email" />
-        <Input placeholder="Password" />
-        <ButtonSolid onClick={() => toast.success("Here is your toast.")}>
+        <Input placeholder="Email" onChange={setEmail} value={email} />
+        <Input placeholder="Password" onChange={setPassword} value={password} />
+        <ButtonSolid onClick={() => onLogin()}>
           <h1>Sign in</h1>
         </ButtonSolid>
       </div>

@@ -1,6 +1,9 @@
 import { Modal } from "react-responsive-modal";
 import Input from "../Inputs/Input";
 import ButtonSolid from "../Buttons/ButtonSolid";
+import { useState } from "react";
+import useHandleRegister from "../../hooks/useHandleRegister";
+import { toast } from "react-hot-toast";
 const RegisterModal = ({
   openModal,
   onCloseModal,
@@ -10,6 +13,25 @@ const RegisterModal = ({
   onCloseModal: () => void;
   onClick?: () => void;
 }) => {
+  const [register] = useHandleRegister();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [repeatPassword, setRepeatPassword] = useState("");
+  const onRegister = () => {
+    const isSuccessRegister2 = register(name, email, password, repeatPassword);
+    if (isSuccessRegister2.status) {
+      toast.success(isSuccessRegister2.message);
+      setName("");
+      setEmail("");
+      setPassword("");
+      setRepeatPassword("");
+      onCloseModal();
+    } else {
+      toast.error(isSuccessRegister2.message);
+    }
+  };
+
   return (
     <Modal
       open={openModal}
@@ -22,11 +44,15 @@ const RegisterModal = ({
         <p>please register by filling with your personal detail.</p>
       </div>
       <div className="container-modal">
-        <Input placeholder="Name" />
-        <Input placeholder="Email" />
-        <Input placeholder="Password" />
-        <Input placeholder="Repeat Password" />
-        <ButtonSolid>
+        <Input placeholder="Name" onChange={setName} value={name} />
+        <Input placeholder="Email" onChange={setEmail} value={email} />
+        <Input placeholder="Password" onChange={setPassword} value={password} />
+        <Input
+          placeholder="Repeat Password"
+          onChange={setRepeatPassword}
+          value={repeatPassword}
+        />
+        <ButtonSolid onClick={onRegister}>
           <h1>Sign up</h1>
         </ButtonSolid>
       </div>
