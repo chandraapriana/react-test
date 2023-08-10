@@ -1,10 +1,11 @@
+import type { Dispatch, SetStateAction } from "react";
 const Input = ({
   placeholder,
   onChange,
   value,
 }: {
   placeholder: string;
-  onChange: any;
+  onChange: Dispatch<SetStateAction<string>>;
   value: string;
 }) => {
   return (

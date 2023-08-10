@@ -1,10 +1,16 @@
 import { LOGGED_USER_KEY } from "../utils/constants";
-
-const useGetLoggedUser = () => {
-  let user = window.localStorage.getItem(LOGGED_USER_KEY);
-  if (user) {
-    user = JSON.parse(user);
+type userType = {
+  name: string;
+  email: string;
+  password: string;
+};
+const useGetLoggedUser = (): [userType | null] => {
+  const userJSon = window.localStorage.getItem(LOGGED_USER_KEY);
+  let user: userType | null = null;
+  if (userJSon) {
+    user = JSON.parse(userJSon);
   }
+
   return [user];
 };
 
