@@ -15,6 +15,13 @@ const useHandleRegister = () => {
     if (password1 !== password2) {
       return { status: false, message: "Passwords are not the same" };
     }
+    const userAlreadyRegister = users?.find((user) => user.email === email);
+    if (userAlreadyRegister) {
+      return {
+        status: false,
+        message: "Email has been used. try with another email",
+      };
+    }
     const user = {
       name,
       email,
