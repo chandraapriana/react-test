@@ -1,7 +1,14 @@
 import ButtonSolid from "../../../components/Buttons/ButtonSolid";
 
+export type PricePlanType = {
+  tier: string;
+  price: number | string;
+  desc: string;
+  benefits: string[];
+};
+
 const Pricing = () => {
-  const pricePlans = [
+  const pricePlans: PricePlanType[] = [
     {
       tier: "Basic",
       price: "Free",
@@ -60,7 +67,7 @@ const PriceCard = ({
   tier: string;
   price: number | string;
   desc: string;
-  benefits: any;
+  benefits: string[];
 }) => {
   console.log(benefits);
   return (
