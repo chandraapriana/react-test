@@ -1,6 +1,7 @@
 import { Modal } from "react-responsive-modal";
 import Input from "../Inputs/Input";
 import ButtonSolid from "../Buttons/ButtonSolid";
+import { toast } from "react-hot-toast";
 const LoginModal = ({
   openModal,
   onCloseModal,
@@ -24,7 +25,7 @@ const LoginModal = ({
       <div className="container-modal">
         <Input placeholder="Email" />
         <Input placeholder="Password" />
-        <ButtonSolid>
+        <ButtonSolid onClick={() => toast.success("Here is your toast.")}>
           <h1>Sign in</h1>
         </ButtonSolid>
       </div>
