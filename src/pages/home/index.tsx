@@ -1,3 +1,4 @@
+import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header";
 import Home from "../../features/home";
 
@@ -11,6 +12,7 @@ const HomePage = () => {
       />
       <Header />
       <Home />
+      <Footer />
     </div>
   );
 };
