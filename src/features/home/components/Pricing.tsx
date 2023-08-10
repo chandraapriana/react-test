@@ -50,8 +50,8 @@ const Pricing = () => {
     <div className="pricing" id="pricing">
       <h1>Pricing</h1>
       <div className="container-price-card">
-        {pricePlans.map((plan) => (
-          <PriceCard key={plan.tier + "plan"} {...plan} />
+        {pricePlans.map((plan, idx) => (
+          <PriceCard key={plan.tier + "plan" + idx} {...plan} />
         ))}
       </div>
     </div>
@@ -78,8 +78,8 @@ const PriceCard = ({
         </h1>
         <p className="desc">{desc}</p>
         <div className="container-price-benefit">
-          {benefits.map((benefit) => (
-            <PriceBenefitItem key={tier + "benefits"} benefit={benefit} />
+          {benefits.map((benefit, idx) => (
+            <PriceBenefitItem key={tier + "benefits" + idx} benefit={benefit} />
           ))}
         </div>
       </div>

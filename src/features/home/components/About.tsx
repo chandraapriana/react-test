@@ -20,8 +20,8 @@ const About = () => {
           </p>
         </div>
         <div className="container-about-info">
-          {aboutInfoData.map((info) => (
-            <Info {...info} />
+          {aboutInfoData.map((info, idx) => (
+            <Info key={"info" + idx} {...info} />
           ))}
         </div>
       </div>
