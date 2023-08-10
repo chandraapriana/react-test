@@ -3,7 +3,7 @@ import ButtonSolid from "../Buttons/ButtonSolid";
 import { toast } from "react-hot-toast";
 import { useState } from "react";
 import { LoginModal, RegisterModal } from "../Modals";
-
+import { scroller } from "react-scroll";
 import useGetLoggedUser from "../../hooks/useGetLoggedUser";
 import useHandleLogoutUser from "../../hooks/useHandleLogoutUser";
 
@@ -23,7 +23,7 @@ const Header = () => {
     }
     setIsShowDropdownLogout(false);
   };
-  console.log(user);
+  console.log("test", user);
   return (
     <>
       <div className="header">
@@ -32,13 +32,40 @@ const Header = () => {
           <h1>Goodys</h1>
         </div>
         <div className="right">
-          <a className="btn-nav" href="#about">
+          <a
+            className="btn-nav"
+            href="#about"
+            onClick={() =>
+              scroller.scrollTo("about", {
+                smooth: true,
+                offset: -32,
+                duration: 500,
+              })
+            }>
             About
           </a>
-          <a className="btn-nav" href="#about">
+          <a
+            className="btn-nav"
+            href="#pricing"
+            onClick={() =>
+              scroller.scrollTo("pricing", {
+                smooth: true,
+                offset: -32,
+                duration: 500,
+              })
+            }>
             Pricing
           </a>
-          <a className="btn-nav" href="#about">
+          <a
+            className="btn-nav"
+            href="#about"
+            onClick={() =>
+              scroller.scrollTo("contact", {
+                smooth: true,
+                offset: 0,
+                duration: 500,
+              })
+            }>
             Contact
           </a>
           <ButtonOutline
@@ -64,10 +91,51 @@ const Header = () => {
           </ButtonSolid>
 
           <ul className={`dropdown-content ${isShowDropdown ? "show" : ""}`}>
-            <li>About</li>
-            <li>Pricing</li>
-            <li>Contact</li>
-            <li onClick={() => setIsShowLoginModal(true)}>Login</li>
+            {user && (
+              <>
+                <li>{user?.name?.substring(0, 10)}</li>
+                <hr />
+              </>
+            )}
+            <li
+              onClick={() => {
+                scroller.scrollTo("about", {
+                  smooth: true,
+                  offset: 0,
+                  duration: 500,
+                });
+                setIsShowDropdown(false);
+              }}>
+              About
+            </li>
+            <li
+              onClick={() => {
+                scroller.scrollTo("pricing", {
+                  smooth: true,
+                  offset: 0,
+                  duration: 500,
+                });
+                setIsShowDropdown(false);
+              }}>
+              Pricing
+            </li>
+            <li
+              onClick={() => {
+                scroller.scrollTo("contact", {
+                  smooth: true,
+                  offset: 0,
+                  duration: 500,
+                });
+                setIsShowDropdown(false);
+              }}>
+              Contact
+            </li>
+            <li
+              onClick={() =>
+                user ? handleLogoutUser() : setIsShowLoginModal(true)
+              }>
+              {user ? "Log out" : "Log in"}
+            </li>
           </ul>
         </div>
       </div>

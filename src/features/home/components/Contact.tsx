@@ -7,7 +7,7 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   return (
-    <div className="contact">
+    <div className="contact" id="contact">
       <h1>Contact</h1>
       <div className="container-contact">
         <div className="contact-text">

@@ -6,7 +6,7 @@ const About = () => {
     { title: "5 Billion", desc: "User Interactive per Day" },
   ];
   return (
-    <div className="about">
+    <div className="about" id="about">
       <h1>About</h1>
       <div className="row">
         <div className="text-about">
