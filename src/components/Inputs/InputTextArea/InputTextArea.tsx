@@ -1,11 +1,21 @@
-const InputTextArea = () => {
+const InputTextArea = ({
+  placeholder,
+  onChange,
+  value,
+}: {
+  placeholder: string;
+  onChange: any;
+  value: string;
+}) => {
   return (
     <textarea
       name="desc"
       id="desc"
       cols={30}
       rows={10}
-      placeholder="description"></textarea>
+      onChange={(e) => onChange(e.target.value)}
+      value={value}
+      placeholder={placeholder}></textarea>
   );
 };
 

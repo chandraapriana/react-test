@@ -1,8 +1,11 @@
-import ButtonSolid from "../../../components/Buttons/ButtonSolid";
+import { useState } from "react";
 import Input from "../../../components/Inputs/Input";
 import InputTextArea from "../../../components/Inputs/InputTextArea";
 
 const Contact = () => {
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
   return (
     <div className="contact">
       <h1>Contact</h1>
@@ -24,12 +27,25 @@ const Contact = () => {
           </p>
         </div>
         <div className="contact-form">
-          <Input placeholder="name" />
-          <Input placeholder="email" />
-          <InputTextArea />
-          <ButtonSolid>
+          <Input value={name} onChange={setName} placeholder="Name" />
+          <Input value={email} onChange={setEmail} placeholder="Email" />
+          <InputTextArea
+            value={message}
+            onChange={setMessage}
+            placeholder="Message"
+          />
+
+          <a
+            className="btn-solid"
+            href={`mailto:aprianachandra@gmail.com?subject=Contact%20Us&body=${
+              message +
+              "%0D%0A%0D%0A%0D%0AEmail: " +
+              email +
+              "%0D%0AName: " +
+              name
+            }`}>
             <p>Send</p>
-          </ButtonSolid>
+          </a>
         </div>
       </div>
     </div>
