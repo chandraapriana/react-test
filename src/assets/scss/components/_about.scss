@@ -40,7 +40,7 @@
         max-width: 100%;
       }
       .info-about {
-        width: 40%;
+        max-width: 40%;
         border: 1px solid $grey;
         height: 70px;
         border-radius: 0.625rem;
@@ -56,6 +56,7 @@
         }
         @include phone-view {
           width: 80%;
+          max-width: 80%;
           height: 3.5rem;
           h1 {
             font-size: 1.25rem;
