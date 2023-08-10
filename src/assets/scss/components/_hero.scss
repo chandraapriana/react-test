@@ -5,6 +5,8 @@
     margin-top: 13%;
     @include flexrc();
     gap: 40px;
+    position: relative;
+    z-index: 10;
     @include tablet-view {
       margin-top: 8%;
       flex-direction: column;
