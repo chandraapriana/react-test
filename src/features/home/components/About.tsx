@@ -1,9 +1,14 @@
+type InfoDataType = {
+  title: string;
+  desc: string;
+};
+
 const About = () => {
-  const aboutInfoData = [
+  const aboutInfoData: InfoDataType[] = [
     { title: "5 Billion", desc: "User Interactive per Day" },
-    { title: "5 Billion", desc: "User Interactive per Day" },
-    { title: "5 Billion", desc: "User Interactive per Day" },
-    { title: "5 Billion", desc: "User Interactive per Day" },
+    { title: "1 Billion", desc: "Users Engaged Every Month" },
+    { title: "8 Billion", desc: "Goods Recorded" },
+    { title: "30 Billion", desc: "Notification Sent Every Day" },
   ];
   return (
     <div className="about" id="about">
