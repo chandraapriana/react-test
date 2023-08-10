@@ -5,7 +5,7 @@ const ButtonSolid = ({
 }: {
   children: React.ReactNode;
   type?: "icon" | "button";
-  onClick: () => void;
+  onClick?: () => void;
 }) => {
   return (
     <button onClick={onClick} className={`btn-solid ${type}`}>

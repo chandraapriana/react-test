@@ -1,0 +1,37 @@
+.custom-modal {
+  border-radius: 1rem;
+  max-width: 400px;
+  width: fit-content;
+  @include flexcc();
+
+  .header-modal {
+    @include flexcc();
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .container-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .btn-solid {
+    h1 {
+      font-size: 1rem;
+    }
+  }
+
+  .footer-modal {
+    p {
+      font-size: 1rem;
+      span {
+        font-size: 1rem;
+        font-weight: bold;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    }
+  }
+}
