@@ -5,6 +5,8 @@
   border-radius: 0.5rem;
   color: white;
   font-size: 1rem;
+  @include flexrc();
+  font-weight: bold;
 
   &.icon {
     min-width: fit-content;
