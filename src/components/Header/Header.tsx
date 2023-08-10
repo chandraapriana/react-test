@@ -23,7 +23,7 @@ const Header = () => {
     }
     setIsShowDropdownLogout(false);
   };
-  console.log("test", user);
+
   return (
     <>
       <div className="header">
