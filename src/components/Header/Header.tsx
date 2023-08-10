@@ -1,14 +1,29 @@
 import ButtonOutline from "../Buttons/ButtonOutline";
 import ButtonSolid from "../Buttons/ButtonSolid";
-
+import { toast } from "react-hot-toast";
 import { useState } from "react";
 import { LoginModal, RegisterModal } from "../Modals";
 
+import useGetLoggedUser from "../../hooks/useGetLoggedUser";
+import useHandleLogoutUser from "../../hooks/useHandleLogoutUser";
+
 const Header = () => {
+  const [user] = useGetLoggedUser();
   const [isShowDropdown, setIsShowDropdown] = useState(false);
+  const [isShowDropdownLogout, setIsShowDropdownLogout] = useState(false);
   const [isShowLoginModal, setIsShowLoginModal] = useState(false);
   const [isShowRegisterModal, setIsShowRegisterModal] = useState(false);
-
+  const [logout] = useHandleLogoutUser();
+  const handleLogoutUser = () => {
+    const isLoggedOut = logout();
+    if (isLoggedOut.status) {
+      toast.success(isLoggedOut.message);
+    } else {
+      toast.error(isLoggedOut.message);
+    }
+    setIsShowDropdownLogout(false);
+  };
+  console.log(user);
   return (
     <>
       <div className="header">
@@ -26,9 +41,20 @@ const Header = () => {
           <a className="btn-nav" href="#about">
             Contact
           </a>
-          <ButtonOutline onClick={() => setIsShowLoginModal(true)}>
-            <p>Log in</p>
+          <ButtonOutline
+            onClick={() =>
+              user
+                ? setIsShowDropdownLogout((prev) => !prev)
+                : setIsShowLoginModal(true)
+            }>
+            <p>{user ? user?.name?.substring(0, 10) : "Log in"} </p>
           </ButtonOutline>
+          <ul
+            className={`dropdown-content logout ${
+              isShowDropdownLogout ? "show" : ""
+            }`}>
+            <li onClick={() => handleLogoutUser()}>Logout</li>
+          </ul>
         </div>
         <div className="mobile">
           <ButtonSolid
